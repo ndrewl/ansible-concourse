@@ -92,6 +92,18 @@ exec {{ concourse_binary_path }} web \
 {% for team in concourse_main_team_github_teams %}
   --main-team-github-team "{{ team }}" \
 {% endfor %}
+{% if concourse_gitlab_client_id is defined %}
+  --gitlab-client-id "{{ concourse_gitlab_client_id }}" \
+{% endif %}
+{% if concourse_gitlab_client_secret is defined %}
+  --gitlab-client-secret "{{ concourse_gitlab_client_secret }}" \
+{% endif %}
+{% for name in concourse_main_team_gitlab_group %}
+  --main-team-gitlab-group "{{ name }}" \
+{% endfor %}
+{% for name in concourse_main_team_gitlab_user %}
+  --main-team-gitlab-user "{{ name }}" \
+{% endfor %}
 {% if concourse_auth_duration is defined %}
   --auth-duration "{{ concourse_auth_duration }}" \
 {% endif %}

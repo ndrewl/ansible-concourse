@@ -92,6 +92,13 @@ concourse_main_team_github_users: []
 concourse_main_team_github_orgs: []
 concourse_main_team_github_teams: []
 
+# Web GitLab authentication variables
+
+concourse_gitlab_client_id:
+concourse_gitlab_client_secret:
+concourse_main_team_gitlab_group: []
+concourse_main_team_gitlab_user: []
+
 # Worker variables
 
 concourse_worker: no
